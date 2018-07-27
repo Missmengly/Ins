@@ -7,8 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "InsMainViewController.h"
+#import "InsNearViewController.h"
+#import "InsDynamicDetailsViewController.h"
+#import "YHTimeLineListController.h"
+#import "InsFollowViewController.h"
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
 @interface AppDelegate ()
+{
+    BMKMapManager         *_mapManager;
+  }
 
 @end
 
@@ -16,14 +26,40 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+
+    
+    InsMainViewController * vc = [[InsMainViewController alloc]init];
+//    InsNearViewController * vc = [[InsNearViewController alloc]init];
+//    InsDynamicDetailsViewController * vc = [[InsDynamicDetailsViewController alloc]init];
+//    YHTimeLineListController * vc = [[YHTimeLineListController alloc]init];
+//    InsFollowViewController * vc = [[InsFollowViewController alloc]init];
+    
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    
+    
+    _mapManager = [BMKMapManager new];
+    BOOL ret = [_mapManager start:@"oDZwAkCQq41fDDdhHeRhYG7jH5Cwtyx8" generalDelegate:nil];
+    if (!ret)     {
+        NSLog(@"百度地图启动失败");
+    } else {
+        NSLog(@"百度地图启动成功");
+    }
+    
+ 
+    
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+  
+  
 }
 
 

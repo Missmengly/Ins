@@ -1,0 +1,121 @@
+//
+//  Ins.pch
+//  Ins
+//
+//  Created by zhtt on 2018/7/2.
+//  Copyright © 2018年 ZHTT. All rights reserved.
+//
+
+#ifndef Ins_pch
+#define Ins_pch
+
+#import "AppDelegate.h"
+
+#import "BDTContants.h"
+
+#import "UIButton+Block.h"
+#import "BXNavigationItemHelper.h"
+
+
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+
+
+#import <Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+
+
+
+/// YYKit
+#import "YYText.h"
+#import "YYCategories.h"
+#import "YYModel.h"
+#import "YYWebImage.h"
+// category
+#import "UIBarButtonItem+MHExtension.h"
+#import "UIAlertController+MHColor.h"
+#import "UIView+MH.h"
+#import "UIFont+MHExtension.h"
+#import "NSString+MH.h"
+#import "NSObject+MH.h"
+#import "UIImage+MH.h"
+#import "UIViewController+MHDismissKeyboard.h"
+#import "UIViewController+MHHUD.h"
+#import "NSDate+Extension.h"
+#import "NSError+MHExtension.h"
+#import "UITableView+MHExtension.h"
+
+
+// tool
+#import "MHSingleton.h"
+#import "MHWebImageTool.h"
+
+#import "KVOController.h"
+
+
+#import "FBKVOController+MHExtension.h"
+#import "UIScrollView+MHRefresh.h"
+// UIKit
+#import "MHButton.h"
+
+#import "MHImageView.h"
+#import "MHDivider.h"
+#import "MHBackButton.h"
+
+
+#import "MHInline.h"
+#import "MHConstant.h"
+#import "UIViewController+MHHUD.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
+
+
+
+
+
+
+#import "NSString+Additional.h"
+
+#define RGB16(rgbValue)\
+\
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
+
+#define RGB16(rgbValue)\
+\
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
+#define kGrayColor  RGBCOLOR(196, 197, 198)
+#define kGreenColor RGBCOLOR(0, 201, 144)
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define KEYWINDOW [UIApplication sharedApplication].keyWindow
+
+#define DDLog(FORMAT, ...)   fprintf(stderr, "\n[%s]  function:%s line:%d content:%s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#define WeakSelf  __weak __typeof(&*self)weakSelf = self;
+
+
+
+#define SDColor(r, g, b, a) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:a]
+
+#define Global_tintColor [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
+
+#define Global_mainBackgroundColor SDColor(248, 248, 248, 1)
+
+#define TimeLineCellHighlightedColor [UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0]
+
+#define DAY @"day"
+
+#define NIGHT @"night"
+
+#endif
